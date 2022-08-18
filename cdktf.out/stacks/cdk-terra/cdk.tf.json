@@ -1,0 +1,62 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "local",
+      "stackName": "cdk-terra",
+      "version": "0.12.0"
+    },
+    "outputs": {
+    }
+  },
+  "provider": {
+    "docker": [
+      {
+      }
+    ]
+  },
+  "resource": {
+    "docker_container": {
+      "nginxContainer": {
+        "//": {
+          "metadata": {
+            "path": "cdk-terra/nginxContainer",
+            "uniqueId": "nginxContainer"
+          }
+        },
+        "image": "${docker_image.nginxImage.latest}",
+        "name": "tutorial",
+        "ports": [
+          {
+            "external": 8000,
+            "internal": 80
+          }
+        ]
+      }
+    },
+    "docker_image": {
+      "nginxImage": {
+        "//": {
+          "metadata": {
+            "path": "cdk-terra/nginxImage",
+            "uniqueId": "nginxImage"
+          }
+        },
+        "keep_locally": false,
+        "name": "nginx:latest"
+      }
+    }
+  },
+  "terraform": {
+    "backend": {
+      "local": {
+        "path": "/Users/hugolesta/Desktop/Projects/Golang/cdk-terra/terraform.cdk-terra.tfstate"
+      }
+    },
+    "required_providers": {
+      "docker": {
+        "source": "kreuzwerker/docker",
+        "version": "2.19.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": "0.12.0",
+  "stacks": {
+    "cdk-terra": {
+      "name": "cdk-terra",
+      "constructPath": "cdk-terra",
+      "workingDirectory": "stacks/cdk-terra",
+      "synthesizedStackPath": "stacks/cdk-terra/cdk.tf.json",
+      "annotations": [],
+      "dependencies": []
+    }
+  }
+}
